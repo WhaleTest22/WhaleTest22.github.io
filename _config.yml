@@ -40,8 +40,8 @@ permalink: pretty
 defaults:
   -
     scope:
-      path: ""
-      type: "products"
+      path: "/fur-jekyll-template/"
+      type: "/fur-jekyll-template/products"
     values:
       layout: "product"
   -
