@@ -2,8 +2,8 @@
 # Site
 
 title: Mirae_B2B_Test
-url: "https://skywhale22.github.io/fur-jekyll-template/"
-baseurl: "/fur-jekyll-template/"
+url: "https://WhaleTest22.github.io/"
+baseurl: ""
 remote_theme: CloudCannon/fur-jekyll-template
 google_analytics_key:
 google_maps_javascript_api_key:
