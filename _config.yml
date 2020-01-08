@@ -41,14 +41,15 @@ defaults:
   -
     scope:
       path: ""
-      type: "products"
+      type: "/fur-jekyll-template/products"
     values:
-      layout: "/fur-jekyll-template/product"
+      layout: "product"
   -
     scope:
       path: ""
+      type: "/fur-jekyll-template/pages"
     values:
-      layout: "/fur-jekyll-template/page"
+      layout: "page"
   -
     scope:
       path: "index.html"
