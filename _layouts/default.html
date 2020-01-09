@@ -29,8 +29,8 @@
 		<!-- Thunder: Styles - <head> 태그 가장 끝 부분에 넣어주세요. -->
 		<link rel="stylesheet" href="https://code.clayful.io/clayful-thunder@1.2.1/theme/basic/style.min.css">
 		<!-- Thunder: NOTY - Styles -->
-		<link rel="stylesheet" type="text/css" href="https://unpkg.com/noty@3.2.0-beta/lib/noty.css">
-		<link rel="stylesheet" type="text/css" href="https://unpkg.com/noty@3.2.0-beta/lib/themes/metroui.css">
+		<!-- <link rel="stylesheet" type="text/css" href="https://unpkg.com/noty@3.2.0-beta/lib/noty.css">
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/noty@3.2.0-beta/lib/themes/metroui.css"> -->
 
 	</head>
 	<body>
@@ -97,150 +97,18 @@
 				<p class="copyright">All Rights Reserved &copy; {{ site.time | date: '%Y' }} {{ site.title }}, Inc. Template by <a href="https://cloudcannon.com">CloudCannon</a></p>
 			</div>
 		</footer>
-		<script>
-			
+		<script>			
 			document.getElementById("open-nav").onclick = function () {
 				document.body.classList.toggle("nav-open");
 				return false;
-			};
-			
+			};		
 		</script>
-
-		<!-- Thunder: Scripts - <body> 태그 가장 끝 부분에 넣어주세요. -->
+		<!-- jQuery: 이미 jQuery 사용시 생략 -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<!-- 썬더: 코어 스크립트 -->
 		<script src="https://code.clayful.io/clayful-thunder@1.2.1/thunder.min.js"></script>
 		<script src="https://code.clayful.io/clayful-thunder@1.2.1/theme/basic/templates.min.js"></script>
 		<script src="https://code.clayful.io/clayful-thunder@1.2.1/locales/ko.js"></script>
-		<!-- Thunder: NOTY - Scripts -->
-		<script src="https://unpkg.com/noty@3.2.0-beta/lib/noty.js"></script>
-		<script src="https://code.clayful.io/clayful-thunder@1.2.1/plugins/notification/noty.min.js"></script>
-		<!-- Thunder: Daum - Scripts -->
-		<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
-		<script src="https://code.clayful.io/clayful-thunder@1.2.1/plugins/searchAddress/daum.min.js"></script>
-		<!-- Thunder: Iamport - Scripts -->
-		<script src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-		<script src="https://code.clayful.io/clayful-thunder@1.2.1/plugins/makePayment/iamport.min.js"></script>
-		<script>
-			IMP.init('imp22055546');
-			Thunder({
-				client: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImZmOTBhZTczZjMxZDMwMjUwNDE1OGUyMTFlMDRiNzgyYTBmYjRiODE3NWE0OGVjYzI1Y2YyZjU3ODkxYzYyMTIiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNTc4NTk2MTY0LCJzdG9yZSI6IlRSNFBYQVZLV1JUMi5XNEVCN1AyUENLSFYiLCJzdWIiOiI0QVlTUzNISkFNQkwifQ.VfjG1Ryxsw5vheeILSiroAu3KIV98KmgoDakjkN_wF8',
-				header: true,
-				legal: {
-					orderPrivacy: {
-						link: null,
-						text: null
-					},
-					orderTerms: {
-						link: null,
-						text: null
-					},
-					registrationPrivacy: {
-						link: null,
-						text: null
-					},
-					registrationTerms: {
-						link: null,
-						text: null
-					}
-				},
-				productLabels: [
-					'unavailable',
-					'sold-out',
-					'discounted'
-				],
-				productActions: [
-					'add-to-cart',
-					'buy-now'
-				],
-				productOptionSelector: 'combined',
-				dateInputFormat: 'YYYY-MM-DD',
-				customerDashboardLogout: true,
-				customerIdentity: [
-					'name.full',
-					'alias',
-					'userId'
-				],
-				customerRegistrationFields: [
-					'userId:required',
-					'email:required',
-					'password:required',
-					'name.full:required',
-					'mobile:required'
-				],
-				customerUpdateFields: [
-					'userId',
-					'email',
-					'name.full:required',
-					'mobile:required',
-					'phone'
-				],
-				customerOrderFields: [
-					'name.full:required',
-					'email:required',
-					'mobile:required',
-					'phone'
-				],
-				recipientFields: [
-					'name.full:required',
-					'mobile:required',
-					'phone'
-				],
-				socialApps: [],
-				orderAuthFields: [],
-				refundReasonCategories: [
-					{
-						label: 'refundReason:jr6yY8XbPfD',
-						shippingFee: {
-							someItems: false,
-							allItems: false
-						}
-					},
-					{
-						label: 'refundReason:Oo8r2wDgRhL',
-						shippingFee: {
-							someItems: false,
-							allItems: true
-						}
-					}
-				],
-				plugins: {
-					notification: ThunderNotificationNoty(),
-					searchAddress: ThunderSearchAddressDaum(),
-					makePayment: ThunderMakePaymentIamport()
-				},
-				addressDisabled: [
-					'country',
-					'state',
-					'city',
-					'address1',
-					'postcode'
-				],
-				root: 'https://whaletest22.github.io/',
-				paymentMethods: {
-					order: [
-						{
-							id: 'bank-transfer',
-							label: 'bankTransfer',
-							cardFields: false,
-							payLater: true
-						}
-					]
-				},
-				messages: {
-					'payment-form': {
-						bankTransfer: '무통장 입금'
-					},
-					'order-request-refund': {
-						'refundReason:jr6yY8XbPfD': '고객 변심',
-						'refundReason:Oo8r2wDgRhL': '제품 하자'
-					}
-				}
-			});
-			Thunder.render('#target-element', 'product-list', {
-				page: 1,
-				limit: 12
-			});
-			Thunder.open('product-list');		
-		</script>
 	</body>
 </html>
