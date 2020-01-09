@@ -12,8 +12,11 @@
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
 		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
 		<link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet">
-		<link rel="stylesheet" href="https://code.clayful.io/clayful-thunder@1.2.1/theme/basic/style.min.css">	
-
+	<!-- Thunder: Styles - <head> 태그 가장 끝 부분에 넣어주세요. -->
+		<link rel="stylesheet" href="https://code.clayful.io/clayful-thunder@1.2.1/theme/basic/style.min.css">
+		<!-- Thunder: NOTY - Styles -->
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/noty@3.2.0-beta/lib/noty.css">
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/noty@3.2.0-beta/lib/themes/metroui.css">
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<script>
 				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -66,6 +69,22 @@
 			<script src="https://code.clayful.io/clayful-thunder@1.2.1/theme/basic/templates.min.js"></script>
 			<script src="https://code.clayful.io/clayful-thunder@1.2.1/locales/ko.js"></script>
 
+
+			<!-- Thunder: Scripts - <body> 태그 가장 끝 부분에 넣어주세요. -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<script src="https://code.clayful.io/clayful-thunder@1.2.1/thunder.min.js"></script>
+			<script src="https://code.clayful.io/clayful-thunder@1.2.1/theme/basic/templates.min.js"></script>
+			<script src="https://code.clayful.io/clayful-thunder@1.2.1/locales/ko.js"></script>
+			<!-- Thunder: NOTY - Scripts -->
+			<script src="https://unpkg.com/noty@3.2.0-beta/lib/noty.js"></script>
+			<script src="https://code.clayful.io/clayful-thunder@1.2.1/plugins/notification/noty.min.js"></script>
+			<!-- Thunder: Daum - Scripts -->
+			<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+			<script src="https://code.clayful.io/clayful-thunder@1.2.1/plugins/searchAddress/daum.min.js"></script>
+			<!-- Thunder: Iamport - Scripts -->
+			<script src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+			<script src="https://code.clayful.io/clayful-thunder@1.2.1/plugins/makePayment/iamport.min.js"></script>
+			
 			<div class="container">
 				<ul class="footer-columns">
 					<li class="about">
@@ -108,16 +127,149 @@
 			</div>
 		</footer>
 		<script>
+			
 			document.getElementById("open-nav").onclick = function () {
 				document.body.classList.toggle("nav-open");
 				return false;
 			};
 
+			IMP.init('imp22055546');
 			Thunder({
-				header: true,            // 사이트에 헤더를 추가합니다.
-				client: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImJlODI4M2FhNGEzYTI5Y2U1OThhNDFkYjBkMjk3ODIyMGM3ZjIyZTg0MGVhOTQ2NWNjM2U0ZGU0ODAyYWQwODUiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNTc4NDkyNTMxLCJzdG9yZSI6IlRSNFBYQVZLV1JUMi5XNEVCN1AyUENLSFYiLCJzdWIiOiI0QVlTUzNISkFNQkwifQ.mFNhKTeZ4VnB8jTjK3IMX7GuGkWjuD7s2ZmAu3SHH5U' // 이전에 생성한 토큰을 <client-token> 대신 입력해주세요.
+				client: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImJlODI4M2FhNGEzYTI5Y2U1OThhNDFkYjBkMjk3ODIyMGM3ZjIyZTg0MGVhOTQ2NWNjM2U0ZGU0ODAyYWQwODUiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNTc4NDkyNTMxLCJzdG9yZSI6IlRSNFBYQVZLV1JUMi5XNEVCN1AyUENLSFYiLCJzdWIiOiI0QVlTUzNISkFNQkwifQ.mFNhKTeZ4VnB8jTjK3IMX7GuGkWjuD7s2ZmAu3SHH5U',
+				header: false,
+				legal: {
+					orderPrivacy: {
+						link: null,
+						text: null
+					},
+					orderTerms: {
+						link: null,
+						text: null
+					},
+					registrationPrivacy: {
+						link: null,
+						text: null
+					},
+					registrationTerms: {
+						link: null,
+						text: null
+					}
+				},
+				productLabels: [
+					'unavailable',
+					'sold-out',
+					'discounted'
+				],
+				productActions: [
+					'add-to-cart',
+					'buy-now'
+				],
+				productOptionSelector: 'combined',
+				dateInputFormat: 'YYYY-MM-DD',
+				customerDashboardLogout: true,
+				customerIdentity: [
+					'name.full',
+					'alias',
+					'userId'
+				],
+				customerRegistrationFields: [
+					'userId:required',
+					'email:required',
+					'password:required',
+					'name.full:required',
+					'mobile:required'
+				],
+				customerUpdateFields: [
+					'userId',
+					'email',
+					'name.full:required',
+					'mobile:required',
+					'phone'
+				],
+				customerOrderFields: [
+					'name.full:required',
+					'email:required',
+					'mobile:required',
+					'phone'
+				],
+				recipientFields: [
+					'name.full:required',
+					'mobile:required',
+					'phone'
+				],
+				socialApps: [],
+				orderAuthFields: [],
+				refundReasonCategories: [
+					{
+						label: 'refundReason:pZYyZbZRvCY',
+						shippingFee: {
+							someItems: false,
+							allItems: false
+						}
+					},
+					{
+						label: 'refundReason:Lvj0vXvayiz',
+						shippingFee: {
+							someItems: false,
+							allItems: true
+						}
+					}
+				],
+				plugins: {
+					notification: ThunderNotificationNoty(),
+					searchAddress: ThunderSearchAddressDaum(),
+					makePayment: ThunderMakePaymentIamport()
+				},
+				addressDisabled: [
+					'country',
+					'state',
+					'city',
+					'address1',
+					'postcode'
+				],
+				root: 'http://WhaleTest22.github.io',
+				subscriptionPlans: [
+					{
+						id: '5L3FTGGKBRM6',
+						startsAt: 'datepicker',
+						time: '12:00'
+					}
+				],
+				paymentMethods: {
+					order: [
+						{
+							id: 'bank-transfer',
+							label: 'bankTransfer',
+							cardFields: false,
+							payLater: true
+						}
+					],
+					subscription: [
+						{
+							id: 'clayful-iamport',
+							label: 'html5InicisByCard',
+							cardFields: false,
+							meta: {
+								pg: 'html5_inicis',
+								payMethod: 'card'
+							}
+						}
+					]
+				},
+				messages: {
+					'payment-form': {
+						bankTransfer: '무통장 입금',
+						html5InicisByCard: '신용카드 (이니시스)'
+					},
+					'order-request-refund': {
+						'refundReason:pZYyZbZRvCY': '고객 변심',
+						'refundReason:Lvj0vXvayiz': '제품 하자'
+					}
+				}
 			});
 		</script>
+
+
 		<script src="{{ site.baseurl }}/js/application.js" type="text/javascript"></script>
 	</body>
 </html>
