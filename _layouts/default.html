@@ -110,8 +110,37 @@
 
 		<script src="{{ site.baseurl }}/js/application.js" type="text/javascript"></script>
 
-		<!-- 상품 그리드가 <div> 안에 마법같이 렌더링됩니다. -->
-		<div data-thunder-render="product-list"></div>
+
+		<!-- 해당 컨테이너에 렌더링 -->
+		<div
+			data-thunder-render="product-list"
+			data-page="1"
+			data-limit="24"
+			data-sort="-createdAt"
+			data-fields=""
+			data-columns="4"
+			data-filter=""
+			data-labels=""
+			data-image-width="240"
+			data-image-height="240"
+			data-show-summary="true"
+			data-show-rating="true"
+			data-show-compare-price="true"
+			data-use-pagination="true"
+			data-on-view-product="Function">
+		</div>
+
+		<!-- 클릭시 모달창 열기 -->
+		<button data-thunder-open="product-list">
+			Click Me!
+		</button>
+
+		<!-- 클릭시 타겟 DOM에 렌더링 -->
+		<button
+			data-thunder-render="product-list"
+			data-thunder-render-target="#target-element">
+			Click Me!
+		</button>
 
 		<!-- Thunder: Scripts - <body> 태그 가장 끝 부분에 넣어주세요. -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
