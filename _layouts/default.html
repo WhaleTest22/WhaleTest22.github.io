@@ -26,6 +26,10 @@
 		{% if site.snipcart_key %}
 			<script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="{{ site.snipcart_key }}"></script>
 		{% endif %}
+
+		{% if site.clayful_key %}
+			<script src="https://code.clayful.io/clayful-js@1.1.1/clayful-js.min.js" id="clayful" data-api-key="{{ site.clayful_key }}"></script>
+		{% endif %}
 	</head>
 	<body>
 		<header>
