@@ -106,9 +106,6 @@
 			
 		</script>
 
-		<!-- 상품 그리드가 <div> 안에 마법같이 렌더링됩니다. -->
-		<div data-thunder-render="product-list"></div>
-
 		<!-- Thunder: Scripts - <body> 태그 가장 끝 부분에 넣어주세요. -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://code.clayful.io/clayful-thunder@1.2.1/thunder.min.js"></script>
@@ -239,6 +236,11 @@
 					}
 				}
 			});
+			Thunder.render('#target-element', 'product-list', {
+				page: 1,
+				limit: 12
+			});
+			Thunder.open('product-list');		
 		</script>
 	</body>
 </html>
